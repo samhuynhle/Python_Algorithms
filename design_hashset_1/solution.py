@@ -35,7 +35,7 @@ class MyHashSet(object):
         bucketIndex = self._hash(key)
         return self.bucketArray[bucketIndex].exists(key)
 
-class Ndoe:
+class Node:
     def __init__(self, value, nextNode=None):
         self.value = value
         self.next = nextNode
