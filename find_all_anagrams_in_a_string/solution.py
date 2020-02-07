@@ -6,14 +6,17 @@ class Solution:
             return []
         pCount = Counter(p)
         sCount = Counter()
+        return generateOutput(s, p, sLength, pLength, sCount, pCount)
+
+    def generateOutput(s, p, sLength, pLength, sCount, pCount):
         output = []
-        for i in range(nLength):
+        for i in range(sLength):
             sCount[s[i]] += 1
-            if i >= nLength:
-                if sCount[s[i - np]] == 1:
-                    del sCount[s[i - np]]
-                else: 
-                    sCount[s[i - np]] -= 1
+            if i >= sLength:
+                if sCount[s[i-pLength]] == 1:
+                    del sCount[s[i - pLength]]
+                else:
+                    sCount[s[i - pLength]] -= 1
             if pCount == sCount:
-                output.append(i - nLength + 1)
+                output.append(i - sLength + 1)
         return output
