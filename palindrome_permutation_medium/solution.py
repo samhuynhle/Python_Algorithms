@@ -1,7 +1,15 @@
+"""
+
+In this algorithm, we need to check for all permutations that can be palindromes of a string
+
+
+"""
+from collections import Counter
+
 class Solution(object):
     def generatePalindromes(self, s):
         if len(s) == 1: return [s]
-        counter = collections.Counter(s)
+        counter = Counter(s)
         count = 0
         build = []
         output = []
