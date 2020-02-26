@@ -5,11 +5,11 @@ class Solution:
 
         steps = 0
 
-        for i in range(1, len(points) - 1, 1):
+        for i in range(1, len(points), 1):
             nextX = points[i][0]
             nextY = points[i][1]
 
-            steps += max(abs(nextX - x), abs(nexyY-y))
+            steps += max(abs(nextX - x), abs(nextY-y))
 
             x = nextX
             y = nextY
