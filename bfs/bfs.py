@@ -44,3 +44,48 @@ class Graph:
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
+
+"""
+
+1. requires a matrix; starting point or for loop to start BFS search
+2. uses set to keep track of visited points
+3. uses queue to progress the search
+4. there are conditionals for the search; only process if it hasn't been visited
+
+"""
+
+
+class Matrix:
+    def __init__(self, matrix):
+        self.matrix = matrix
+    
+    def BFS(self, matrix):
+        matrix_row_total = len(matrix)
+        matrix_col_total = len(matrix[0])
+        
+        visited = set()
+        queue = []
+        starting_point = [0,0] # can be any point, or even searching for different points
+
+        queue.append(starting_point)
+
+        while queue:
+            s = queue.pop(0)
+
+            if s not in visited:
+                visited.add(s)
+
+                # Action phase, do something, change things, manipulate things, calcuate, etc.
+                print(s, "do something")
+                print(matrix[s[0]][s[1]])
+
+                if s[0] > 0:    
+                    queue.add([s[0]-1, s[1]])
+                if s[0] < matrix_row_total:
+                    queue.add([s[0]+1, s[1]])
+                if s[1] > 0:
+                    queue.add([s[0], s[1] - 1])
+                if s[1] < matrix_col_total:
+                    queue.add([s[0], s[1] + 1])
+            else:
+                continue
