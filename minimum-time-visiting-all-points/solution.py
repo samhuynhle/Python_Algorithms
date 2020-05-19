@@ -1,3 +1,9 @@
+#
+
+
+
+#
+
 class Solution:
     def minTimeToVisitAllPoints(self, points):
         x = points[0][0]
